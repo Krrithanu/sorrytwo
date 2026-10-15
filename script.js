@@ -46,7 +46,7 @@ function showPage(i){
 function showMemories(){
   const videoScreen = $("video-screen");
   if(videoScreen.hidden || videoScreen.classList.contains("is-leaving"))return;
-  $("memory-video").pause();
+  $("memory-video").src = "about:blank";
   videoScreen.classList.add("is-leaving");
   window.setTimeout(()=>{
     videoScreen.hidden = true;
@@ -120,13 +120,7 @@ function openVideoScreen(){
   void $("video-screen").offsetWidth;
   $("video-screen").classList.add("is-entering");
   $("memories-screen").hidden = true;
-  $("video-fallback").hidden = true;
-  const video = $("memory-video");
-  video.currentTime = 0;
-  video.load();
-  const playback = video.play();
-  if(video.error || video.networkState === 3)$("video-fallback").hidden = false;
-  if(playback)playback.catch(()=>{$("video-fallback").hidden = false;});
+  $("memory-video").src = "https://www.youtube.com/embed/P_r-y22Q6UQ?autoplay=1&playsinline=1&rel=0";
 }
 next.addEventListener("click",()=>{
   if(current===pages.length-1){$("letter-modal").hidden=false;$("close").focus();}
@@ -136,12 +130,9 @@ back.addEventListener("click",()=>showPage(current-1));
 $("close").addEventListener("click",()=>{$("letter-modal").hidden=true;});
 $("done").addEventListener("click",beginEnding);
 $("letter-modal").addEventListener("click",e=>{if(e.target===$("letter-modal"))$("letter-modal").hidden=true;});
-$("memory-video").addEventListener("ended",showMemories);
-$("memory-video").addEventListener("error",()=>{$("video-fallback").hidden=false;});
 $("skip-video").addEventListener("click",showMemories);
-$("show-memories").addEventListener("click",showMemories);
 $("ending-close").addEventListener("click",()=>{
-  $("memory-video").pause();
+  $("memory-video").src = "about:blank";
   window.clearInterval(memoryTimer);
   $("ending-screen").hidden=true;
 });
@@ -152,7 +143,7 @@ $("memory-next").addEventListener("click",()=>{
 $("memory-prev").addEventListener("click",()=>moveMemory(-1));
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape" && !$("ending-screen").hidden){
-    $("memory-video").pause();
+    $("memory-video").src = "about:blank";
     window.clearInterval(memoryTimer);
     $("ending-screen").hidden=true;
     return;
