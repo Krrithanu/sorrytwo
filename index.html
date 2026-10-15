@@ -61,15 +61,7 @@
       <h2>Before you go...</h2>
       <p class="ending-intro">There’s one more thing I wanted you to see.</p>
       <div class="video-frame">
-        <video id="memory-video" controls playsinline preload="metadata" aria-label="A video for you">
-          <source src="our-video.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-      </div>
-      <div class="video-fallback" id="video-fallback" hidden>
-        <span class="fallback-heart" aria-hidden="true">♡</span>
-         
-        <button class="ending-button" id="show-memories" type="button">Continue to our memories <span aria-hidden="true">→</span></button>
+        <iframe id="memory-video" title="A video for you" style="display:block;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <button class="skip-video" id="skip-video" type="button">Skip to our memories <span aria-hidden="true">→</span></button>
     </div>
