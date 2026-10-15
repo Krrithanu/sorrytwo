@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071128">
+  <title>Just a Little Letter ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="site">
+    <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+    <header class="topbar">
+      <div class="brand"><span class="heart">♡</span> a little letter for you</div>
+      <div class="counter" id="counter">01 <span>/</span> 06</div>
+    </header>
+
+    <section class="stage" aria-live="polite">
+      <div class="art" id="art"></div>
+      <div class="shade"></div>
+      <div class="sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <article class="content" id="content">
+        <p class="eyebrow"><span></span><b id="eyebrow">A little something, just for you</b></p>
+        <h1 id="heading">Can I tell you<br><em>something?</em></h1>
+        <p class="body-copy" id="body-copy">I made this little page because I want to say something properly, honestly, and from my heart.</p>
+        <div class="actions">
+          <button class="primary" id="next">Open my letter <span aria-hidden="true">→</span></button>
+          <button class="back" id="back" hidden><span aria-hidden="true">←</span> Back</button>
+        </div>
+      </article>
+      <div class="tiny-note" id="tiny-note">Take your time. There’s no rush. ♡</div>
+    </section>
+
+    <footer class="footer">
+      <div class="progress"><div class="track"><div class="fill" id="fill"></div></div><span>ONE PAGE AT A TIME</span></div>
+      <div class="dots" id="dots" aria-label="Story pages"></div>
+    </footer>
+  </main>
+
+  <section class="letter-modal" id="letter-modal" hidden aria-modal="true" role="dialog" aria-labelledby="letter-title">
+    <div class="letter-paper">
+      <button class="close" id="close" aria-label="Close letter">×</button>
+      <p class="eyebrow"><span></span> just from me to you</p>
+      <h2 id="letter-title">Shadhuuuuuu,</h2>
+      <p>I’m really sorry. I know that word was something special between us, and I should not have called another girl by the word I used for you. Even though it came out by accident, I understand why it hurt you.</p>
+      <p>I never wanted you to feel like you were just the same as anyone else to me. You’re not. I’m sorry I made you question something that mattered to us.</p>
+      <p>I don’t want our relationship to end. I love what we have, and I want to make things right. But I know I can’t ask you to stop feeling hurt just because I’ve explained myself. I’ll be more careful, listen to you, and give you the time you need.</p>
+      <p>You don’t have to forgive me right now. Whenever you’re ready, I want to hear you and understand how you feel.</p>
+      <p class="signature">I’m sorry, truly.<br><em>With all my love ♡</em></p>
+      <button class="primary modal-done" id="done">That’s all I wanted to say <span>♡</span></button>
+    </div>
+  </section>
+  <section class="ending-screen" id="ending-screen" hidden aria-label="A little more to share">
+    <div class="ending-glow" aria-hidden="true"></div>
+    <button class="ending-close" id="ending-close" type="button" aria-label="Close memories">×</button>
+    <div class="video-screen" id="video-screen">
+      <p class="ending-kicker">A little more, just for you</p>
+      <h2>Before you go...</h2>
+      <p class="ending-intro">There’s one more thing I wanted you to see.</p>
+      <div class="video-frame">
+        <video id="memory-video" controls playsinline preload="metadata" aria-label="A video for you">
+          <source src="our-video.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <div class="video-fallback" id="video-fallback" hidden>
+        <span class="fallback-heart" aria-hidden="true">♡</span>
+         
+        <button class="ending-button" id="show-memories" type="button">Continue to our memories <span aria-hidden="true">→</span></button>
+      </div>
+      <button class="skip-video" id="skip-video" type="button">Skip to our memories <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="memories-screen" id="memories-screen" hidden>
+      <p class="ending-kicker">The little things stay with me</p>
+      <h2>Our small memories</h2>
+      <div class="memory-frame">
+        <img id="memory-photo" src="images/pic1.jpg" alt="A little moment I keep close.">
+        <span class="photo-glint" aria-hidden="true"></span>
+      </div>
+      <p class="memory-caption" id="memory-caption" aria-live="polite"></p>
+      <div class="memory-controls">
+        <button class="memory-arrow" id="memory-prev" type="button" aria-label="Previous memory">←</button>
+        <span class="memory-count" id="memory-count">01 / 04</span>
+        <div class="memory-dots" id="memory-dots" aria-hidden="true"></div>
+        <button class="ending-button" id="memory-next" type="button">Next memory</button>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
